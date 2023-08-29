@@ -1,0 +1,38 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update</title>
+  </head>
+  <body>
+    <h1><a href="/campgrounds">캠프 목록</a></h1>
+    <h1>캠핑장 수정</h1>
+    <form
+      action="/campgrounds/<%= campground['_id']%>?_method=PUT"
+      method="POST"
+    >
+      <input
+        type="text"
+        name="campground[title]"
+        placeholder="캠핑장 이름"
+        value="<%= campground['title'] %>"
+      />
+      <input
+        type="text"
+        name="campground[location]"
+        placeholder="위치"
+        value="<%= campground['location'] %>"
+      />
+      <input
+        type="text"
+        name="campground[price]"
+        placeholder="가격"
+        value="<%= campground['price'] %>"
+      />
+      <button>캠핑장 추가</button>
+    </form>
+  </body>
+</html>
